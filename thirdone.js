@@ -20,5 +20,20 @@ var tt = dee.map(function(v,i){
 
 //salary
 
-var w = {"name":"jai","salary":500000,"posi":function (){if(w.salary>100000&&w.salary<150000){console.log("Intern");} else if(w.salary>200000&&w.salary<300000){console.log("assosiate")} else{console.log("you are unique")}}};
-w.posi();
+var dee = [{"name":"jai","salary":1200000},{"name":"shiva","salary":128050},{"name":"raj","salary":200010},{"name":"venky","salary":11282},{"name":"pranay","salary":170000}];
+
+function decide(name1,total1){
+    if(total1<100000){
+    console.log(name1+" is a Intern");
+    }
+    else if(total1>200000){
+    console.log(name1+" is a developer")
+    }
+    else{
+    console.log(name1+" is unique, I mean you doesnt come under any category.");
+    }
+    }
+
+    dee.forEach(function(v,i){
+        decide(v.name,v.salary);
+        });
