@@ -1,0 +1,3 @@
+In the first line we created a variable named tweetList which contains div element that is obtained through id.
+
+We first call eventListeners() function, in the event listeners function, we created three event listeners, first event listener in line 8 for button
