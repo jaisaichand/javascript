@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Table 1</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    .green{
+        background: greenyellow;
+    }
+    </style>
+</head>
+
+<body>
+    <table class="table">
+        <thead>
+            <tr>
+                <th> S no </th>
+                <th> S Name </th>
+                <th> S Grade </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="t" onclick="fun1('tr1')" id="tr1">
+                <td>1</td>
+                <td>Jai</td>
+                <td> A </td>
+            </tr>
+
+            <tr class="t" onclick="fun1('tr2')" id="tr2">
+                    <td>2</td>
+                    <td>Raj</td>
+                    <td> A </td>
+            </tr>
+
+            <tr class="t" onclick="fun1('tr3')" id="tr3">
+                    <td>3</td>
+                    <td>Elon Musk</td>
+                    <td> A++ </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+<script>
+function fun1(t){
+    var ee = document.getElementById(t);
+    if(ee.classList.contains("bg-success")){
+        ee.classList.remove("bg-success");
+    }
+    else{
+        ee.classList.add("bg-success");
+    }
+}
+</script>
+</html>
