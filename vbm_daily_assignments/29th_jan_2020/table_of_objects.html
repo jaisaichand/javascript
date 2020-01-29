@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Table of objects</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/bd9f8ac991.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container pt-4">
+        <div class="container m-0 p-0 d-flex justify-content-around mb-3">
+            <input id="p1" type="text" placeholder="first name">
+            <input id="p2" type="text" placeholder="last name">
+            <input id="p3" type="text" placeholder="age">
+        </div>
+        <div class="container m-0 p-0 d-flex justify-content-around mb-3">
+            <input id="p4" type="text" placeholder="address">
+            <input id="p5" type="text" placeholder="city">
+            <input id="p6" type="text" placeholder="state">
+        </div>
+        <div class="container m-0 p-0 d-flex justify-content-around mb-3">
+            <input id="p7" type="text" placeholder="country">
+            <input id="p8" type="text" placeholder="number">
+            <input id="p9" type="text" placeholder="Email">
+        </div>
+        <div class="container">
+            <button onclick="add1()" class="btn btn-success  btn-block">Add</button>
+            <button onclick="clear1()" class="btn btn-danger btn-block">Clear</button>
+        </div>
+        <div class="container mt-3">
+            <table class="table table-striped table-dark text-warning">
+                <thead>
+                    <tr>
+                        <th>Number</th>
+                        <th>Fullname</th>
+                        <th>Mobile</th>
+                        <th>Age</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                    </tr>
+                </thead>
+                <tbody id="tb1">
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+<script>
+    
+    var table1='';
+    var Student = function(name1,name2,age,address,city,state,country,number,email){
+        this.name1=name1;
+        this.name2 =name2;
+        this.age = age;
+        this.address=address;
+        this.city=city;
+        this.state=state;
+        this.country=country;
+        this.number=number;
+        this.email=email;
+        this.getFullName=function(){
+            this.fab1 = this.name1+" "+this.name2;
+            //return tab1;
+        }
+
+        this.getEmail = function(){
+            this.fab2 = this.email;
+        }
+        this.getAddress = function(){
+            this.fab3 = this.address+","+this.city+","+this.state+","+this.country;
+            this.fab4 = this.age;
+            this.fab5 = this.number;
+        }
+    }
+    var c1=0;
+    var w = 0;
+    var ob=[];
+    var obj=[];
+    var innht = "";
+    function add1(){
+
+    var t1 = document.getElementById("p1").value;  
+    var t2 = document.getElementById("p2").value;
+    var t3 = document.getElementById("p3").value;
+    var t4 = document.getElementById("p4").value;
+    var t5 = document.getElementById("p5").value;
+    var t6 = document.getElementById("p6").value;
+    var t7 = document.getElementById("p7").value;  
+    var t8 = document.getElementById("p8").value;  
+    var t9 = document.getElementById("p9").value;  
+    if((t1!="")&&(t2!=="")&&(t3!=="")&&(t4!=="")&&(t5!=="")&&(t6!=="")&&(t7!=="")&&(t8!=="")&&(t9!=="")){
+        ob[c1] = new Student(t1,t2,t3,t4,t5,t6,t7,t8,t9);
+        obj.push(ob[c1]);
+        innht = document.getElementById("tb1").innerHTML;
+        obj[c1].getFullName();
+        obj[c1].getAddress();
+        obj[c1].getEmail();
+        yy =innht+"<tr><td>"+(c1+1)+"</td><td>"+ob[c1].fab1+"</td><td>"+ob[c1].fab5+"</td><td>"+ob[c1].fab4+"</td><td>"+ob[c1].fab2+"</td><td>"+ob[c1].fab3+"</td></tr>";
+        document.getElementById("tb1").innerHTML = yy;
+        c1=c1+1;
+    }
+
+    
+    }
+
+    function clear1(){
+    var t1 = document.getElementById("p1").value="";  
+    var t2 = document.getElementById("p2").value="";
+    var t3 = document.getElementById("p3").value="";
+    var t4 = document.getElementById("p4").value="";
+    var t5 = document.getElementById("p5").value="";
+    var t6 = document.getElementById("p6").value="";
+    var t7 = document.getElementById("p7").value="";  
+    var t8 = document.getElementById("p8").value="";  
+    var t9 = document.getElementById("p9").value="";  
+    }
+</script>
+</html>
