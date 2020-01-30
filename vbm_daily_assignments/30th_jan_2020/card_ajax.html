@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cards using ajax js</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-3">
+        <button id="btn1" class="btn btn-block btn-info text-center" onclick="gen1()">Generate</button>
+    </div>
+    <div class="container" id="base1">
+      
+    </div>    
+</body>
+
+<script>
+    var httpVal = new XMLHttpRequest();
+    function gen1(){
+
+    
+    var tt = httpVal.open("GET","https://jsonplaceholder.typicode.com/users");
+    httpVal.send(tt);
+    httpVal.responseType = "json";
+    var valueInside = "";
+    var gf = document.getElementById("base1").innerHTML;
+        var fin = "";
+    httpVal.onload = function(){
+       
+        //alert("name is "+httpVal.response[0].address);
+        for(i=0;i<9;i++){
+            fin = fin+"<div class='card bg-danger mt-3 mb-3'><h2 class='card-header text-center bg-warning'>"+httpVal.response[i].name+"</h2><h3 class='card-body p-5 text-center text-warning  bg-dark'>"+httpVal.response[i].address.street+" , "+httpVal.response[0].address.city+" , "+httpVal.response[0].address.zipcode+"</h3><p class='card-footer text-center bg-danger text-white'>"+httpVal.response[i].email+"</p></div>";
+        }
+        document.getElementById("base1").innerHTML=fin;
+        document.getElementById("btn1").classList.add("d-none");
+    }
+    httpVal.onerror = function(){
+        alert("error");
+    }
+    }
+</script>
+
+</html>

@@ -1,0 +1,52 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Table using ajax js</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container text-right">
+        <button class="btn btn-info mb-4 mt-4" onclick="onclick1()">Generate</button>
+        <table class="table table-striped">
+            <thead>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Website</th>
+                <th>City</th>
+            </thead>
+            <tbody id="tb1">
+
+            </tbody>
+        </table>
+    </div>
+</body>
+<script>
+var httpVar = new XMLHttpRequest();
+var onclick1 = function(){
+    var dat = httpVar.open("GET","https://jsonplaceholder.typicode.com/users");
+httpVar.send(dat);
+httpVar.responseType = "json";
+var tb1Inner = "";
+httpVar.onload = function(){
+    //lenOfDAt = httpVar.response;
+    //alert(httpVar.response.length);
+    httpVar.response.forEach(function(val,ind){
+        //alert(httpVar.response[ind].name);
+        tb1Inner =tb1Inner+ "<tr><td>"+httpVar.response[ind].id+"</td><td>"+httpVar.response[ind].name+"</td><td>"+httpVar.response[ind].phone+"</td><td>"+httpVar.response[ind].website+"</td><td>"+httpVar.response[ind].address.city+"</td></tr>";
+
+    });
+    document.getElementById("tb1").innerHTML=tb1Inner;
+    //console.log(httpVar.response[0].name);
+    
+}
+
+httpVar.onerror = function(){
+    alert("could not retreive data from server");
+}
+}
+</script>
+</html>
