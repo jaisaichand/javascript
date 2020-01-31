@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Assessment</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/bd9f8ac991.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container-fluid" id="base1">
+        <div class="bg-warning container-fluid d-flex mt-4 justify-content-between">
+            <img src="bell.png" alt="logo" height="60px" width="60px"/>
+            <button class="btn btn-info">Logout</button>
+        </div>
+        <div class="mt-4 container-fluid d-flex justify-content-between mb-4 bg-danger">
+            <a class="text-white" href="#">Home</a>
+            <a class="text-white" href="#">Services</a>
+            <a class="text-white" href="#">About</a>
+        </div>
+        <div class="container">
+            <button class="btn btn-info btn-block" onclick="gen1()">Generate</button>
+        </div>
+        <div class="container mt-4">
+            <table class="table table-striped">
+                <thead>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>email</th>
+                </thead>
+                <tbody id="tb1">
+                    
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+</body>
+<script>
+    function gen1(){
+        var httVal = new XMLHttpRequest();
+        var tt = httVal.open("GET","https://jsonplaceholder.typicode.com/users");
+        httVal.send();
+        httVal.responseType = "json";
+        var pp = "";
+        httVal.onload = function(){
+            httVal.response.forEach(function(val,ind) {
+                pp = pp + "<tr><td "+">"+"<a href='card1.html'"+ "id="+ind+">"+val.id+"</a></td><td>"+val.name+"</td>"+"<td>"+val.phone+"</td>"+"<td>"+val.name+"</td>";
+                
+            });
+            document.getElementById("tb1").innerHTML = pp;
+            for(i=0;i<10;i++){
+                document.getElementById(i).href += '?id='+i;
+            }
+            //$("a").attr("card1.html", '?fruit=' + 'apple');
+        }
+    }
+
+   
+    
+
+    //el.href += '?fruit=apple';
+</script>
+</html>

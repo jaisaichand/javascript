@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+        <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <meta http-equiv="X-UA-Compatible" content="ie=edge">
+                <title>Assessment card</title>
+                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+                
+        </head>
+        
+        <body class="container">
+            
+            <div class="container d-flex justify-content-center align-content-center" id="base1">
+
+            </div>
+        </body>
+        <script>
+            
+        var ttp = document.URL;
+        var gg = ttp.slice(ttp.indexOf("=")+1,ttp.length);
+        var hh = Number(gg);
+        var loki = new XMLHttpRequest();
+        var lp = loki.open("GET","https://jsonplaceholder.typicode.com/users");
+        var fin = loki.send();
+        loki.responseType = 'json';
+        loki.onload = function(){
+            var yupp = "<div class='container'><div class='card'><h2 class='card-header text-center'>"+loki.response[hh].name+"</h2><div class='card-body text-center'>city:"+loki.response[hh].address.city+"<br> street:"+loki.response[hh].address.street+"<br></div><p class='card-footer text-center'>"+loki.response[hh].email+"</p></div></div>";
+            document.getElementById("base1").innerHTML=yupp;
+        }
+        </script>
+</html>
