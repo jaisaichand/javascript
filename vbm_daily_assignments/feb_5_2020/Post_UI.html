@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>POST method</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/bd9f8ac991.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <div>
+        <div class="header1 d-flex justify-content-between bg-warning p-3">
+            <img src="bell.png" alt="bell" height="50px" width="50px"/>
+            <button class="btn btn-lg btn-info">LOGOUT</button>
+        </div>
+        <div class="header-2 d-flex justify-content-around bg-info p-2">
+            <a href="#" class="text-white">USERS</a>
+            <a href="#" class="text-white">Services</a>
+            <a href="#" class="text-white">About</a>
+        </div>
+        <div class="body1">
+            <div class="d-none" id="b1"></div>
+            <div class="form-body">
+                <div class="d-flex justify-content-around mt-3">
+                    <div>
+                        <p>Userid</p>
+                        <input type="text" class="form-control" placeholder="Userid" id="id1"/>
+                    </div>
+                    <div>
+                        <p>Name</p>
+                        <input type="text" class="form-control" placeholder="Name" id="name1"/>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-around mt-3">
+                    <div>
+                        <p>Password</p>
+                        <input type="text" class="form-control" placeholder="Password" id="password1"/>
+                    </div>
+                    <div>
+                        <p>Email id</p>
+                        <input type="text" class="form-control" placeholder="Email id" id="email1"/>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-around mt-3">
+                    <div>
+                        <p>Mobile</p>
+                        <input type="Number" class="form-control" placeholder="Mobile number" id="mobile1"/>
+                    </div>
+                    <div>
+                        <p>Street 1</p>
+                        <input type="text" class="form-control" placeholder="Enter your street 1 name" id="str1"/>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-around mt-3">
+                    <div>
+                        <p >Street 2</p>
+                        <input type="text" class="form-control" placeholder="Enter your street 1 name" id="str2"/>
+                    </div>
+                    <div>
+                        <p>District</p>
+                        <input type="text" class="form-control" placeholder="Enter your district name" id="dist1"/>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-around mt-3 mb-4">
+                    <div>
+                        <p class="text-left">City</p>
+                        <input type="text" class="form-control" placeholder="Enter your city name" id="city1"/>
+                    </div>
+                    <div>
+                        <p>Country</p>
+                        <select class="form-control" id="country1">
+                            <option value="selected">India</option>
+                            <option>Australia</option>
+                            <option>Newzealand</option>
+                            <option>America</option>
+                            <option>Britan</option>
+                            <option>France</option>
+                        </select>
+                    </div>
+                </div>
+               <div class="container"> <input type="text" class="form-control" placeholder="enter your website name" id="website1"></div>
+            </div>
+            <div class="btn-body d-flex justify-content-around mt-3 mb-4 ">
+                <button class="btn btn-lg btn-success" onclick="submit1()">Submit</button>
+                <button class="btn btn-lg btn-danger" onclick="cancel1()">Cancel</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="Post_UI_js.js"></script>
+</html>
