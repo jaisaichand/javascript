@@ -45,7 +45,7 @@
 <script>
     function gen1(){
         var httVal = new XMLHttpRequest();
-        var tt = httVal.open("GET","https://jsonplaceholder.typicode.com/users");
+        httVal.open("GET","https://jsonplaceholder.typicode.com/users");
         httVal.send();
         httVal.responseType = "json";
         var pp = "";

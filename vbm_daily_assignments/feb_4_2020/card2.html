@@ -21,8 +21,8 @@
         var t1 = fe.slice(fe.indexOf("=")+1,fe.indexOf("&"));
         var t2 = fe.slice(fe.lastIndexOf("=")+1,fe.length);
         var loki = new XMLHttpRequest();
-        var lp = loki.open("GET","https://jsonplaceholder.typicode.com/users");
-        var fin = loki.send();
+        loki.open("GET","https://jsonplaceholder.typicode.com/users");
+        loki.send();
         loki.responseType = 'json';
         loki.onload = function(){
             var yupp = "<div class='container'><div class='card'><h2 class='card-header text-center'>"+loki.response[t1].name+"</h2><div class='card-body text-center'>city:"+loki.response[t1].address.city+"</div><p class='card-footer text-center'>"+t2+"</p></div></div>";
