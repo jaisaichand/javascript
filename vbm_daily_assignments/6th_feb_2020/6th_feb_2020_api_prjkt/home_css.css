@@ -1,0 +1,13 @@
+img[alt="logo1"]{
+    width: 30%;
+}
+
+.link1,.link1:hover{
+    text-decoration: none;
+    color: white;
+}
+
+a,a:hover{
+    color: grey;
+    text-decoration: none;
+}
