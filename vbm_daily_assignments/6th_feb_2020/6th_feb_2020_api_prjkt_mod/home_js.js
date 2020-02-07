@@ -18,14 +18,14 @@ function delete1(id1){
     var url1 = ""
     var ident = document.getElementById("tb1")
     ident.children[ger].classList.add("d-none");
-    alert("Record Deletion Successful");
+    
     url1 = "https://jsonplaceholder.typicode.com/users";
      http1 = new XMLHttpRequest();
-    http1.open("GET",url1);
+    http1.open("DELETE",url1);
     http1.responseType = "json";
     http1.send();
     http1.onload = function(){
-
+        console.log(http1.response);
     }
 }
 var http2;
