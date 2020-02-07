@@ -13,6 +13,7 @@ httVal.onload = function(){
     document.getElementById("tb1").innerHTML = tabData;
 }
 var http1;
+
 function delete1(id1){
     ger = id1;
     var url1 = ""
@@ -49,8 +50,9 @@ function edit1(value1){
 }
 var edd = [];
 function confirm1(b){
+    edd=[];
     var ted = document.getElementById("tb1").children[b];
-edd.push(document.getElementById("tb1").children[1].children[0].innerHTML);
+    edd.push(document.getElementById("tb1").children[b].children[0].innerHTML);
 
 for(var i=1;i<=4;i++){
     edd.push(ted.children[i].children[0].value);
@@ -63,4 +65,8 @@ document.getElementById("tb1").children[b].innerHTML = tabData2;
 
 function erase1(c){
     document.getElementById("tb1").children[c].innerHTML = prevD;
+}
+
+function refresh1(){
+    document.getElementById("tb1").innerHTML = tabData;
 }
