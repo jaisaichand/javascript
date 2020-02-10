@@ -1,0 +1,28 @@
+img[alt="logo1"]{
+    width: 30%;
+}
+
+.link1,.link1:hover{
+    text-decoration: none;
+    color: white;
+}
+
+a,a:hover{
+    color: grey;
+    text-decoration: none;
+}
+
+.ip{
+    border: none;
+    background:transparent !important;
+}
+
+.row{
+    margin-left: -27px !important;
+}
+
+#sec>button{
+    font-size: 12px;
+    max-width: 46px;
+    max-height: 27px;
+}

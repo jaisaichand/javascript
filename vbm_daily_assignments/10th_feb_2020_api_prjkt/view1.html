@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>View User</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/bd9f8ac991.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="home_css.css">
+</head>
+<body>
+        <div class="row bg-warning p-3">
+                <div class="col-md-2">
+                    <img src="jai.png" class="rounded-circle" alt="logo1">
+                </div>
+                <div class="col-md-1 offset-md-9">
+                    <button class="btn btn-info btn-lg">Logout</button>
+                </div>
+        </div>
+        
+        <div class="row" id="main_body">
+                <div class="col-md-2 pt-5 bg-dark">
+                    <ul class="list-group bg-dark">
+                        <li class="bg-dark list-group-item text-white"><a class="link1" href="home.html">Home</a></li>
+                        <li class="bg-dark list-group-item"><a class="link1" href="services.html">Services</a></li>
+                        <li class="bg-dark list-group-item"><a class="link1" href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-10 mt-5">
+    <div class="container mt-5" id="base1">
+
+    </div>
+    </div></div>
+</body>
+
+<script>
+    var loc = location.search;
+    var id1 = Number(loc.slice(loc.indexOf("=")+1,loc.length));
+    var httVal = new XMLHttpRequest();
+    httVal.open("GET","https://jsonplaceholder.typicode.com/users");
+    httVal.responseType = "json";
+    httVal.send();
+    httVal.onload = function(){
+        var resp = httVal.response[id1];
+        var data1 = "<div class='card text-center'><h2 class='card-header' Name: >"+resp.name+"</h2><div class='card-body'> ADDRESS:<br>Street:"+resp.address.street+"<br>City: "+resp.address.city+"</div><p class='card-footer'>"+resp.email+"</p></div>";
+        document.getElementById("base1").innerHTML = data1;
+    }
+</script>
+</html>
