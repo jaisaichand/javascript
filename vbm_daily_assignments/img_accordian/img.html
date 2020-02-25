@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>img accordiam</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/bd9f8ac991.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <img onclick="vitd(1)"  src="note9.png" alt="note9" class="img-responsive col-md-3"/>
+            <img onclick="vitd(2)"  src="note10_1.jpg" alt="note10" class="img-responsive col-md-3"/>
+            <img onclick="vitd(3)"  src="S10_1.jpg" alt="s10" class="img-responsive col-md-3"/>
+            <img onclick="vitd(4)"  src="shopping.png" alt="iphone 11" class="img-responsive col-md-3"/>
+        </div>
+        <div id="ff">
+            <div class="container d-none" id="1">
+                Powerful, 4000mAh battery<br>
+                Store more, delete less with 128GB storage<br>
+                All new Bluetooth enabled S Pen<br>
+            </div>
+
+            <div class="container d-none" id="2">
+                The Intelligent battery that helps you power through your entire day The Intelligent battery that helps you power through your entire day<br>
+                Laptop-level storage in your pocket<br>
+                Enjoy the freedom (or remote ability) to capture pro grade quality pictures with the S Pen Air Actions<br>
+            </div>
+
+            <div class="container d-none" id="3">
+                Triple rear camera setup: 16MP with f2.2 aperture ultra wide + 12MP with f1.5 and f2.4 aperture wide + 12MP f2.4 tele| Dual front camera setup - 10MP f1.9 Main + 8MP f2.2 live focus
+                16.35 centimeters (6.4-inch) Dynamic AMOLED multi-touch capacitive touchscreen with 3040 x 1440 pixels resolution, 522 ppi pixel density
+                Memory, Storage and SIM: 8GB RAM | 128GB internal memory expandable up to 512GB | Dual SIM (nano+nano) dual stand by (4G+4G)
+                Android Pie v9.0 operating system with 2.7GHz + 2.3GHz + 1.9GHz Exynos 9820 octa core processor
+                4100mAH lithium-ion battery
+            </div>
+
+            <div class="container d-none" id="4">
+                    6.1-inch Liquid Retina HD LCD display
+                    Water and dust resistant (2 meters for up to 30 minutes, IP68)
+                    Dual-camera system with 12MP Ultra Wide and Wide cameras; Night mode, Portrait mode, and 4K video up to 60fps
+                    12MP TrueDepth front camera with Portrait mode, 4K video, and Slo-Mo
+            </div>
+           
+        </div>
+    </div>
+</body>
+<script>
+    var cnt = [];
+     cnt[0]=0;
+     cnt[1]=0;
+     cnt[2]=0;
+     cnt[3]=0;
+function vitd(numb){
+if((cnt[0]==0)&&(cnt[1]==0)&&(cnt[2]==0)&&(cnt[3]==0)){
+    var dd = document.getElementById(toString(numb));
+    console.log(dd);
+    
+    if(document.getElementById(numb).classList.contains("d-none")){
+        
+        document.getElementById(numb).classList.remove("d-none");
+        cnt[numb]=1;
+    }
+    else{
+        document.getElementById(numb).classList.add("d-none");
+        cnt[numb]=0;
+    }
+}
+else{
+    cnt.forEach(function(val,ind){
+        if(val>0){
+            document.getElementById(ind).classList.add("d-none");
+            cnt[ind]=0;
+        }
+    });
+}
+    
+    
+}
+</script>
+</html>

@@ -52,4 +52,15 @@ function saveit(ind1){
         fio.push(document.getElementById("tb1").children[ind1].children[i].children[0].value);
     }
     document.getElementById("tb1").children[ind1].innerHTML = "<tr><td><input type='text' class='form-control ip' value='"+fio[0]+"' readonly></td><td><input class='form-control ip' value='"+fio[1]+"' readonly></td><td><input class='form-control ip' value='"+fio[2]+"' readonly></td><td> <input class='form-control ip' value='"+fio[3]+"' readonly></td><td> <input class='form-control ip' value='"+fio[4]+"' readonly></td><td><div class='row' id='prim'> <span class='col-md-3' ><a href='view1.html?id="+ind1+"'><i class='fas fa-eye'></i></a></span><span class='col-md-3' onclick='edit3("+ind1+")'><i class='fas fa-pencil-alt'></i></span><span class='col-md-3' onclick='delete1("+ind1+")'><i class='fas fa-trash'></i></span></div> <div id='sec' class='row d-none'><button class='col-md-5 btn btn-sm btn-success' onclick='saveit("+ind1+")'>save</button><button class='btn btn-danger col-md-5 offset-md-1' onclick='cancelit("+ind1+")'>cancel</div>"+"</td></tr>";
+
+var ob1 = {
+    id:document.getElementById("tb1").children[ind1].children[1].children[0].value
+}
+    var ttyy = new XMLHttpRequest();
+ttyy.open("POST","https://jsonplaceholder.typicode.com/users");
+ttyy.responseType = "json";
+ttyy.send(ob1);
+ttyy.onload = function(){
+console.log(ttyy.response);
+}
 }
